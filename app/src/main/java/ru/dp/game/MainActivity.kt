@@ -1,12 +1,11 @@
 package ru.dp.game
 
-import android.icu.text.CaseMap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         val watcherUser = object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-                val inputUserName = s.toString().toUpperCase()
+                val inputUserName = s.toString().toUpperCase(Locale.ROOT)
                 //Toast.makeText(this@MainActivity, "after $inputUser", Toast.LENGTH_SHORT).show()
                 userNameBoolean = if (inputUserName == userName) {
                     println("User name is VALID")
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         val watcherPass = object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
-                val inputUserPassword = s.toString().toUpperCase()
+                val inputUserPassword = s.toString().toUpperCase(Locale.ROOT)
                 userPasswordBoolean = if (inputUserPassword == userPassword) {
                     println("User pass is VALID")
                     true
