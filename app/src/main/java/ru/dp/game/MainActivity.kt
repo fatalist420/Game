@@ -12,18 +12,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val LoginTerminal = Intent(this@MainActivity, LoginTerminalActivity::class.java)
-        startActivityForResult(LoginTerminal, 1)
+        val loginTerminal = Intent(this@MainActivity, LoginTerminalActivity::class.java)
+        startActivityForResult(loginTerminal, 1)
     }
 
     // Обработка двойного нажатия кнопки "BACK" для выхода из приложения
-    private var back_press: Long = 0
+    private var backPress: Long = 0
 
     override fun onBackPressed() {
-        if (back_press + 1000 > System.currentTimeMillis()) {
+        if (backPress + 1000 > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
-            back_press = System.currentTimeMillis()
+            backPress = System.currentTimeMillis()
             Toast.makeText(
                 baseContext,
                 " Для выхода нажмите кнопку Назад еще раз",
