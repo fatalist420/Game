@@ -14,7 +14,7 @@
         android:layout_margin="16dp"
         android:hint="@string/username"
         app:boxStrokeColor="@color/colorPrimary"
-        app:boxStrokeErrorColor="@color/colorError"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputUserName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

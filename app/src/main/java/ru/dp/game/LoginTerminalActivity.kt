@@ -22,16 +22,20 @@ class LoginTerminalActivity : AppCompatActivity() {
 
         outlinedTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
             // Respond to input text change
+            // Set error text
+            outlinedTextField.error = getString(R.string.invalid_username)
             if (inputText.toString().toUpperCase(Locale.ROOT)==userName) {
                 userNameBoolean=true
-
-                Toast.makeText(this, "UserValid", Toast.LENGTH_SHORT).show()
+                // Clear error text
+                outlinedTextField.error = null
+                // Set color box stroke
+                outlinedTextField.boxStrokeColor = getColor(R.color.colorTrue)
             }
         }
     }
 
     override fun onBackPressed() {
-
+        Toast.makeText(this, "Введите имя пользователя и пароль", Toast.LENGTH_SHORT).show()
     }
 }
 
