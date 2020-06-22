@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private var backPress: Long = 0
 
     override fun onBackPressed() {
-        if (backPress + 1000 > System.currentTimeMillis()) {
+        if (backPress + 2000 > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
             backPress = System.currentTimeMillis()

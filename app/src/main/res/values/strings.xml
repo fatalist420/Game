@@ -12,4 +12,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="btn_help">forget password</string>
     <string name="valkiriya">VALKIRIYA</string>
+
+    <string name="supporting_text">Welcome to subdevision Valkiriya!</string>
+    <string name="accept">ACCEPT</string>
 </resources>
