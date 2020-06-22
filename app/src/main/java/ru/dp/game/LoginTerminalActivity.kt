@@ -47,7 +47,7 @@ class LoginTerminalActivity : AppCompatActivity() {
                 outlinedTextFieldUserPassword.boxStrokeColor = getColor(R.color.colorTrue)
             }
         }
-        btn_help.setOnClickListener(){
+        btn_help.setOnClickListener {
             val helpIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id2552946"))
             startActivity(helpIntent)
         }
