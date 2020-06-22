@@ -11,8 +11,8 @@ class LoginTerminalActivity : AppCompatActivity() {
 
     private val userName:String = "DEMIURG"
 
-    //val userPassword:String = "54214155"
-    //val userPassword:String = "1"
+    private val userPassword:String = "54214155"
+
     private var userNameBoolean : Boolean = false
     private var userPasswordBoolean :Boolean = false
 
@@ -20,16 +20,29 @@ class LoginTerminalActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_terminal)
 
-        outlinedTextField.editText?.doOnTextChanged { inputText, _, _, _ ->
+        outlinedTextFieldUserName.editText?.doOnTextChanged { inputText, _, _, _ ->
             // Respond to input text change
             // Set error text
-            outlinedTextField.error = getString(R.string.invalid_username)
+            outlinedTextFieldUserName.error = getString(R.string.invalid_username)
             if (inputText.toString().toUpperCase(Locale.ROOT)==userName) {
                 userNameBoolean=true
                 // Clear error text
-                outlinedTextField.error = null
+                outlinedTextFieldUserName.error = null
                 // Set color box stroke
-                outlinedTextField.boxStrokeColor = getColor(R.color.colorTrue)
+                outlinedTextFieldUserName.boxStrokeColor = getColor(R.color.colorTrue)
+            }
+        }
+
+        outlinedTextFieldUserPassword.editText?.doOnTextChanged { inputText, _, _, _ ->
+            // Respond to input text change
+            // Set error text
+            outlinedTextFieldUserPassword.error = getString(R.string.invalid_password)
+            if (inputText.toString().toUpperCase(Locale.ROOT)==userPassword) {
+                userPasswordBoolean=true
+                // Clear error text
+                outlinedTextFieldUserPassword.error = null
+                // Set color box stroke
+                outlinedTextFieldUserPassword.boxStrokeColor = getColor(R.color.colorTrue)
             }
         }
     }
