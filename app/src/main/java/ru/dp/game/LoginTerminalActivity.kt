@@ -12,9 +12,7 @@ import java.util.*
 class LoginTerminalActivity : AppCompatActivity() {
 
     private val userName:String = "DEMIURG"
-
     private val userPassword:String = "54214155"
-
     private var userNameBoolean : Boolean = false
     private var userPasswordBoolean :Boolean = false
 
@@ -47,6 +45,7 @@ class LoginTerminalActivity : AppCompatActivity() {
                 outlinedTextFieldUserPassword.boxStrokeColor = getColor(R.color.colorTrue)
             }
         }
+
         btn_help.setOnClickListener {
             val helpIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id2552946"))
             startActivity(helpIntent)
