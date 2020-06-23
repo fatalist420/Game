@@ -9,4 +9,10 @@
         <item name="colorError">@color/colorError</item>
     </style>
 
+    <style name="MyButtonBarTheme" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+    </style>
+
 </resources>
