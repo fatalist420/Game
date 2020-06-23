@@ -1,10 +1,10 @@
 package ru.dp.game
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login_terminal.*
 import java.util.*
 
@@ -60,7 +60,12 @@ class LoginTerminalActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Toast.makeText(this, "Введите имя пользователя и пароль", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Введите имя пользователя и пароль", Toast.LENGTH_SHORT).show()
+        Snackbar.make(inputUserPassword,"Введите имя пользователя и пароль",Snackbar.LENGTH_LONG)
+            .setAction("Close"){
+
+            }
+            .show()
     }
 
     fun terminalDialog() {

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/terminalLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginTerminalActivity">
@@ -50,8 +51,8 @@
             android:id="@+id/inputUserPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lines="1"
             android:inputType="number|numberPassword"
+            android:lines="1"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -67,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/valkiriya"/>
+        app:srcCompat="@drawable/valkiriya" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_help"
@@ -80,7 +81,6 @@
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldUserPassword">
-    </com.google.android.material.button.MaterialButton>
+        app:layout_constraintTop_toBottomOf="@+id/outlinedTextFieldUserPassword"></com.google.android.material.button.MaterialButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
