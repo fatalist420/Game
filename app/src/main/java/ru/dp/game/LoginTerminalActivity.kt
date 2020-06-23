@@ -1,12 +1,10 @@
 package ru.dp.game
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_login_terminal.*
 import java.util.*
 
@@ -51,13 +49,23 @@ class LoginTerminalActivity : AppCompatActivity() {
 
         btn_help.setOnClickListener {
             // можно добавить terminalDialog вместо отправки на интернет-ресурс
-            val helpIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id2552946"))
-            startActivity(helpIntent)
+            MaterialAlertDialogBuilder(this)
+                .setIcon(R.drawable.ic_baseline_help_outline_24)
+                .setMessage(resources.getString(R.string.helper_text))
+                .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
+                    // Respond to positive button press
+                }
+                .show()
         }
     }
 
     override fun onBackPressed() {
-        Toast.makeText(this, "Введите имя пользователя и пароль", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "Введите имя пользователя и пароль", Toast.LENGTH_SHORT).show()
+        Snackbar.make(inputUserPassword,"Введите имя пользователя и пароль",Snackbar.LENGTH_LONG)
+            .setAction("Close"){
+
+            }
+            .show()
     }
 
     fun terminalDialog() {
