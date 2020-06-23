@@ -1,7 +1,5 @@
 package ru.dp.game
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -51,8 +49,13 @@ class LoginTerminalActivity : AppCompatActivity() {
 
         btn_help.setOnClickListener {
             // можно добавить terminalDialog вместо отправки на интернет-ресурс
-            val helpIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/id2552946"))
-            startActivity(helpIntent)
+            MaterialAlertDialogBuilder(this)
+                .setIcon(R.drawable.ic_baseline_help_outline_24)
+                .setMessage(resources.getString(R.string.helper_text))
+                .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
+                    // Respond to positive button press
+                }
+                .show()
         }
     }
 
