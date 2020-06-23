@@ -1,6 +1,5 @@
 package ru.dp.game
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +11,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val loginTerminal = Intent(this@MainActivity, LoginTerminalActivity::class.java)
-        startActivityForResult(loginTerminal, 1)
+        //val loginTerminal = Intent(this@MainActivity, LoginTerminalActivity::class.java)
+        //startActivityForResult(loginTerminal, 1)
     }
 
     // Обработка двойного нажатия кнопки "BACK" для выхода из приложения

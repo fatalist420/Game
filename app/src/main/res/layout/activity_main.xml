@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_mail"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="2dp"
+        app:icon="@drawable/ic_baseline_alternate_email_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </com.google.android.material.button.MaterialButton>
 </androidx.constraintlayout.widget.ConstraintLayout>
