@@ -11,8 +11,10 @@
 
     <style name="MyButtonBarTheme" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_margin">2dp</item>
-        <item name="android:layout_width">32dp</item>
-        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_width">@dimen/my_button_bar_size</item>
+        <item name="android:layout_height">@dimen/my_button_bar_size</item>
     </style>
+
+    <dimen name="my_button_bar_size">32dp</dimen>
 
 </resources>

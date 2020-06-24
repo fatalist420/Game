@@ -1,5 +1,6 @@
 package ru.dp.game
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val loginTerminal = Intent(this@MainActivity, LoginTerminalActivity::class.java)
-        //startActivityForResult(loginTerminal, 1)
+        val loginTerminal = Intent(this@MainActivity, MailActivity::class.java)
+        startActivityForResult(loginTerminal, 1)
 
         btn_mail.setOnClickListener{
             Toast.makeText(this, "click", Toast.LENGTH_SHORT).show()
