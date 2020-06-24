@@ -16,4 +16,6 @@
     <string name="supporting_text">Welcome to subdevision Valkiriya!</string>
     <string name="accept">ACCEPT</string>
     <string name="helper_text">54214155</string>
+    <string name="icon">icon</string>
+    <string name="title">Title</string>
 </resources>

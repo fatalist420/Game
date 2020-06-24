@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class MailAdapter(listArray: ArrayList<ItemList>, context: Context):RecyclerView.Adapter<MailAdapter.ViewHolder> (){
+class MailAdapter(listArray: ArrayList<MailItem>, context: Context):RecyclerView.Adapter<MailAdapter.ViewHolder> (){
 
     var listArray_mail = listArray
     var context_mail = context
@@ -17,19 +17,19 @@ class MailAdapter(listArray: ArrayList<ItemList>, context: Context):RecyclerView
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view) {
 
-        val mail_icon = view.findViewById<ImageView>(R.id.imageView2)
-        val mail_text = view.findViewById<TextView>(R.id.textView)
+        val mail_icon = view.findViewById<ImageView>(R.id.mail_image_icon)
+        val mail_title = view.findViewById<TextView>(R.id.mail_title_text)
+        val mail_text = view.findViewById<TextView>(R.id.mail_text)
 
-        fun bind (listItem: ItemList, context: Context){
+        fun bind (listItem: MailItem, context: Context){
 
-            mail_text.text = listItem.body_text
-            mail_icon.setImageResource(listItem.image_id)
+            mail_icon.setImageResource(listItem.mail_image)
+            mail_title.text = listItem.mail_title
+            mail_text.text = listItem.mail_text
             itemView.setOnClickListener(){
                 Toast.makeText(context, "click : ${mail_text.text}", Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
