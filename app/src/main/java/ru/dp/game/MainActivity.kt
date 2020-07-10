@@ -1,6 +1,9 @@
 package ru.dp.game
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,16 +11,32 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //имя файла настроек
+    private val APP_PREFERENCES : String = "GameSetting"
+    private val KEY_APP_PREFERENCE_AUTH : String = "EMPTY"
+    lateinit var pref: SharedPreferences
+
+    companion object {
+        const val MESSAGE:String="NULL"
+    }
+
+    private var resultMessage:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val loginTerminal = Intent(this@MainActivity, MailActivity::class.java)
-        startActivityForResult(loginTerminal, 1)
+        //проверить значение ключа APP_PREFERENCE_AUTH перед запуском утентификации
+        pref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+        if (!pref.contains(KEY_APP_PREFERENCE_AUTH)){
+            val loginTerminal = Intent(this, LoginTerminalActivity::class.java)
+            startActivityForResult(loginTerminal, 0)
+        }
+
+        val mailActivity = Intent(this@MainActivity, MailActivity::class.java)
 
         btn_mail.setOnClickListener{
-            Toast.makeText(this, "click", Toast.LENGTH_SHORT).show()
+            startActivityForResult(mailActivity, 1)
         }
         
         btn_plus.setOnClickListener{
@@ -39,6 +58,18 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode==Activity.RESULT_OK) {
+            resultMessage = data?.getBooleanExtra(MESSAGE.toString(), false)!!
+            if (resultMessage) {
+                //запись успешной аутентификации в ключ, чтобы не вызывать вход в терминал при каждой загрузке
+                pref.edit().putString(KEY_APP_PREFERENCE_AUTH, "AUTH_OK").apply()
+            }
+        }
+
     }
 }
 

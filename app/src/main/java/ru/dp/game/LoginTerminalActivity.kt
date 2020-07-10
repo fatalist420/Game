@@ -1,5 +1,7 @@
 package ru.dp.game
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
@@ -14,6 +16,8 @@ class LoginTerminalActivity : AppCompatActivity() {
     private val userPassword:String = "54214155"
     private var userNameBoolean : Boolean = false
     private var userPasswordBoolean :Boolean = false
+
+    private val terminalMessage:Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +52,7 @@ class LoginTerminalActivity : AppCompatActivity() {
         }
 
         btn_help.setOnClickListener {
-            // можно добавить terminalDialog вместо отправки на интернет-ресурс
+            // terminalDialog для подсказки
             MaterialAlertDialogBuilder(this)
                 .setIcon(R.drawable.ic_baseline_help_outline_24)
                 .setMessage(resources.getString(R.string.helper_text))
@@ -73,6 +77,10 @@ class LoginTerminalActivity : AppCompatActivity() {
             .setMessage(resources.getString(R.string.supporting_text))
             .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
                 // Respond to positive button press
+                // Передача успешной аутентификации в приложении
+                val data = Intent()
+                data.putExtra(MainActivity.MESSAGE, terminalMessage)
+                setResult(Activity.RESULT_OK, data)
                 finish()
             }
             .show()
