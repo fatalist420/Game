@@ -25,7 +25,7 @@ class MailAdapter(listArray: ArrayList<MailItem>, context: Context):RecyclerView
 
             mail_icon.setImageResource(listItem.mail_image)
             mail_title.text = listItem.mail_title
-            mail_text.text = listItem.mail_text
+            mail_text.text = listItem.mail_text.toString()
             itemView.setOnClickListener(){
                 Toast.makeText(context, "click : ${mail_text.text}", Toast.LENGTH_SHORT).show()
             }

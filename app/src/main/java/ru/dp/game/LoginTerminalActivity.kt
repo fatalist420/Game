@@ -1,7 +1,5 @@
 package ru.dp.game
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
@@ -77,10 +75,7 @@ class LoginTerminalActivity : AppCompatActivity() {
             .setMessage(resources.getString(R.string.supporting_text))
             .setPositiveButton(resources.getString(R.string.accept)) { _, _ ->
                 // Respond to positive button press
-                // Передача успешной аутентификации в приложении
-                val data = Intent()
-                data.putExtra(MainActivity.MESSAGE, terminalMessage)
-                setResult(Activity.RESULT_OK, data)
+
                 finish()
             }
             .show()

@@ -1,6 +1,5 @@
 package ru.dp.game
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -62,12 +61,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode==Activity.RESULT_OK) {
-            resultMessage = data?.getBooleanExtra(MESSAGE.toString(), false)!!
-            if (resultMessage) {
+        when (requestCode) {
+            0 -> // LoginTerminalActivity
                 //запись успешной аутентификации в ключ, чтобы не вызывать вход в терминал при каждой загрузке
                 pref.edit().putString(KEY_APP_PREFERENCE_AUTH, "AUTH_OK").apply()
-            }
+            1 -> // MailActivity
+                Toast.makeText(this, "finish mail_activity", Toast.LENGTH_SHORT).show()
         }
 
     }
