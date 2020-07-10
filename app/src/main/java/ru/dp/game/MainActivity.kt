@@ -15,12 +15,6 @@ class MainActivity : AppCompatActivity() {
     private val KEY_APP_PREFERENCE_AUTH : String = "EMPTY"
     lateinit var pref: SharedPreferences
 
-    companion object {
-        const val MESSAGE:String="NULL"
-    }
-
-    private var resultMessage:Boolean = false
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

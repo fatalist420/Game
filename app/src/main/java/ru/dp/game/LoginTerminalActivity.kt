@@ -15,8 +15,6 @@ class LoginTerminalActivity : AppCompatActivity() {
     private var userNameBoolean : Boolean = false
     private var userPasswordBoolean :Boolean = false
 
-    private val terminalMessage:Boolean = true
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_terminal)
